@@ -52,8 +52,8 @@ Aşağıdakileri yaparak carpma isimli fonksiyonu tamamla:
    3. console.log(carpma(7,4)) ile yazdığın fonsiyonu test edin. Console'da sonucu 28 olarak görmelisin.
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function carpma (x,y) {
+  return x*y;
 }
 
 /* Görev 2 : Köpeğin Yaşı */
@@ -65,8 +65,8 @@ Aşağıdakileri yap:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function kopeginYasi(x) {
+  return x*7
 }
 
 /* Görev 3 */
@@ -84,7 +84,13 @@ OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı ye
 */
 
 function oyun(oyuncu, bilgisayar) {
-  /*buraya kodunu yazabilirsin*/
+  if (oyuncu == bilgisayar){
+    return ("Beraberlik");
+  }
+  else if (oyuncu == "Kağıt" && bilgisayar == "Taş" || oyuncu == "Taş" && bilgisayar == "Makas" || oyuncu == "Makas" && bilgisayar == "Kağıt"){
+    return ("Kazandın!");
+  }
+  else return ("Kaybettin!");
 }
 
 // Şimdi Taş, Kağıt, Makas oyununu bilgisayara karşı oynayalım!
@@ -92,8 +98,7 @@ function oyun(oyuncu, bilgisayar) {
 Öncelikle aşağıdakileri yap:
 1. Bilgisayarın seçimini rastgele oluşturacağım bir fonksiyon tanımla. Örn: 
    function bilgisayarinSecimi() {
-   
-   }
+   &   }
 2. Fonsiyonun içinde bilgisayarın seçimi için bir değişken tanımla
 3. Math.random'ı kullanarak bilgisayarın seçimini oluşturun (Math.random 0-1 arasında bir değer verecek)
 4. Bu rastgele değeri "Taş", "Kağıt" veya "Makas"a dönüştüren bir koşul oluşturun
@@ -113,8 +118,8 @@ Aşağdaki milDonusturucu fonksiyonunu aşağıdakileri kullanarak tamamla:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function milDonusturucu(km) {
+  return km*0.621371;
 }
 
 //Görev 4b - Santimetreden Feet
@@ -127,8 +132,8 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yap:
 Google'da arama ipucu: "feet cm dönüştürme"
 */
 
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function feetDonusturucu(cm) {
+  return cm/30.48;
 }
 
 /* Görev 5 : 5 küçük maymun yatakta zıplamış şarkısını çocuklar için hazırladığımı varsayalım. https://www.youtube.com/watch?v=e4EJ34xnlxk */
@@ -144,8 +149,12 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yap:
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
 
-function cocukSarkisi(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function cocukSarkisi(maymun) {
+  return (maymun + " küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!");
+}
+
+for (let i=5; i>0; i--){
+  console.log(cocukSarkisi(i));
 }
 
 /* Görev 6 : Not Hesaplayıcı */
@@ -163,9 +172,22 @@ Aşağdakileri notHesapla fonksiyonunda yap.
  dönün
 */
 
-function notHesapla(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
-}
+function notHesapla(puan) {
+  if (puan >= 90){
+    return ("A aldın");
+  }
+    else if(puan >= 80) {
+      return ("B aldın");
+    }
+    else if(puan >= 70){
+      return ("C aldın");
+    }
+    else if(puan >= 60){
+      return ("D aldın");
+    }
+    else return ("F aldın");
+    }
+
 
 /* Bonus Çalışma: Sesli harf sayacı - Kaç tane sesli harf var? */
 
@@ -178,9 +200,46 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yap.
 İPUCU - .includes() methoduna bakabilirsin. (https://www.w3schools.com/jsref/jsref_includes.asp)
 */
 
-function sesliHarfSayaci(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
-}
+  // function sesliHarfSayaci(kelime) {
+  // kelimekucuk = kelime.toLowerCase();
+  // let arr2 = kelimekucuk.split("");  
+  // let arr = [];
+
+  // for (let i = 0; i < arr2.length; i++){
+  //   if(arr2[i] == "a"){
+  //   arr.push(1);
+  //   }
+  //   else if (arr2[i] == "e"){
+  //     arr.push(2);
+  //     }
+  //   else if (arr2[i] == "o"){
+  //     arr.push(3);
+  //     }  
+  //   else if (arr2[i] == "ö"){
+  //     arr.push(4);
+  //     }
+  //   else if (arr2[i] == "i"){
+  //     arr.push(5);
+  //     }
+  //   else if (arr2[i] == "ı"){
+  //     arr.push(6);
+  //     }
+  //   else if (arr2[i] == "u"){
+  //     arr.push(7);
+  //     }
+  //   else if (arr2[i] == "ü"){
+  //     arr.push(8);
+  //     }
+
+  //   console.log (arr.length);
+  // }
+  // }
+
+  // sesliHarfSayaci("yeliz dobrucali");
+
+
+
+  
 
 /* Lütfen bu satırın alt tarafını değiştirmeyin */
 function sa() {
